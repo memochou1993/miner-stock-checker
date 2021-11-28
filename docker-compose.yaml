@@ -5,3 +5,12 @@ services:
     container_name: miner-stock-checker
     build: .
     restart: always
+    env_file:
+      - .env
+    volumes:
+      - ./logs:/app/logs
+    networks:
+      - backend
+
+networks:
+  backend:
